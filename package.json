@@ -1,0 +1,23 @@
+{
+  "name": "badboa",
+  "version": "1.0.0",
+  "description": "McHacks 2017 project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lrojas12/mchacks2017.git"
+  },
+  "author": "Luisa Rojas-Garcia, Alexandar Mihaylov, Taylor Smith",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lrojas12/mchacks2017/issues"
+  },
+  "homepage": "https://github.com/lrojas12/mchacks2017#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
