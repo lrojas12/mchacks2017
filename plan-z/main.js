@@ -24,7 +24,12 @@ ipcMain.on('synchronous-message', (event, arg) => {
 ipcMain.on('new-win', (event, arg) => {
   console.log(arg)  // prints "ping"
   event.returnValue = 'pong'
-  createWindow();
+
+  windows[0].loadURL(url.format({
+    pathname: path.join(__dirname, 'new.html'),
+    protocol: 'file:',
+    slashes: true
+  }))
 })
 
 
