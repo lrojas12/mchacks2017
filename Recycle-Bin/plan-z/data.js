@@ -15,7 +15,12 @@ function setLocalStorage(item)
     return true;
 }
 
+function clearLocalStorage(){
+    localStorage.clear();
+}
+
 module.exports = {
     get: getFromLocalStorage,
     set: setLocalStorage,
+    clear: clearLocalStorage
 }
