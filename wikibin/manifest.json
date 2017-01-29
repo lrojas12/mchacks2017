@@ -1,0 +1,24 @@
+{
+    "manifest_version": 2,
+    "name": "wikibin",
+    "version": "0.1",
+    "icons": { "16": "img/mchacks_icon.png",
+               "48": "img/mchacks_icon.png",
+               "128": "img/mchacks_icon.png" },
+
+    "content_scripts" : [
+	{
+	    "matches" :["https://en.wikipedia.org/*"],
+	    "js" : ["libs/jquery-3.1.1.min.js","js/content.js"],
+	    "css" : ["override.css"]
+	}
+    ],
+
+    "browser_action" : {
+	"default_icon" : "img/mchacks_icon.png"
+    },
+
+    "background" : {
+	"scripts" : ["js/background.js"]
+    }
+}
