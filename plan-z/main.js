@@ -7,31 +7,54 @@ const BrowserWindow = electron.BrowserWindow
 const path = require('path')
 const url = require('url')
 
+let windows = [];
+
+// In main process.
+const {ipcMain} = require('electron')
+ipcMain.on('asynchronous-message', (event, arg) => {
+  console.log(arg)  // prints "ping"
+  event.sender.send('asynchronous-reply', 'pong')
+})
+
+ipcMain.on('synchronous-message', (event, arg) => {
+  console.log(arg)  // prints "ping"
+  event.returnValue = 'pong'
+})
+
+ipcMain.on('new-win', (event, arg) => {
+  console.log(arg)  // prints "ping"
+  event.returnValue = 'pong'
+  createWindow();
+})
+
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
 
 function createWindow () {
   // Create the browser window.
-  mainWindow = new BrowserWindow({width: 800, height: 600})
+  let newWindow = new BrowserWindow({width: 800, height: 600})
 
   // and load the index.html of the app.
-  mainWindow.loadURL(url.format({
+  newWindow.loadURL(url.format({
     pathname: path.join(__dirname, 'index.html'),
     protocol: 'file:',
     slashes: true
   }))
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools()
+  newWindow.webContents.openDevTools()
 
   // Emitted when the window is closed.
-  mainWindow.on('closed', function () {
+  newWindow.on('closed', function () {
     // Dereference the window object, usually you would store windows
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
-    mainWindow = null
+    newWindow = null
   })
+
+  windows.push(newWindow);
 }
 
 // This method will be called when Electron has finished
