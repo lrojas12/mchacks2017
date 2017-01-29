@@ -7,14 +7,19 @@
 
     <!--Icon -->
     <link rel="shortcut icon" href="">
-
-    <div w3-include-html="www/html/header.html"></div>
-    
-    <hr>
   </head>
   <body>
-    
-    <div w3-include-html="www/html/home.html"></div>
+     <script>
+        let data = require("./data.js");
+
+        console.log(data.get())
+
+        data.set("World");
+
+        console.log(data.get())
+     </script>
+
+<div w3-include-html="www/html/header.html"></div>
 
     <!-- Scripts -->
     <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
