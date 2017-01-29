@@ -34,16 +34,8 @@
     <hr>
   </head>
   <body>
-    <div class="container">
-      <div class="panel panel-primary" id="parameters">
-	<div class="panel-heading">
-	  <h3 class="panel-title">Main Page</h3>
-	</div>
-	<div class="panel-body">
-	  <h3>Content</h3>
-	</div>
-      </div>
-    </div>
+
+    <div w3-include-html="www/html/home.html"></div>
 
     <!-- Scripts -->
     <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
@@ -66,6 +58,9 @@
 
     <!-- NO UI SLIDER -->
     <script type="text/javascript" src="www/js/nouislider.min.js"></script>
+
+    <!-- HTML INCLUDE -->
+    <script src="http://www.w3schools.com/lib/w3data.js"></script>
 
     <!-- LOGIC -->
     <script type="text/javascript" src="www/js/logic.js"></script>
