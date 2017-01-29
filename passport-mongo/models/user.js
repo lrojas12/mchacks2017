@@ -7,5 +7,35 @@ module.exports = mongoose.model('User',{
 	password: String,
 	email: String,
 	firstName: String,
-	lastName: String
+	lastName: String,
+	data:
+    {
+        semesters:
+        [
+            {
+                courses:
+                [
+                    {
+                        name: String,
+						code: String,
+                        breakdown:
+                        [
+                            {
+                                name: String,
+                                weight: Number,
+                                entries:
+                                [
+                                    {
+                                        mark: Number,
+                                        total: Number,
+                                        date: String,
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
 });
