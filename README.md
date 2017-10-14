@@ -1,11 +1,9 @@
 wikibin
 -----------------
 ### Members:
->
-Alexandar Mihaylov
 
+> Alexandar Mihaylov
 >Luisa Rojas
-
 >Taylor Smith
 
 This app is a chrome extension which converts (almost) all numbers on wikipedia to binary for more readability.
